@@ -1,0 +1,343 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.top {
+  display: flex;
+  flex: 0;
+}
+
+.static-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.static-image img {
+  max-width: 100%;
+  height: auto;
+  height: 85vh;
+  width: 50vw;
+}
+
+.components {
+  flex: 1;
+  padding: 2px;
+  border: #fff;
+  overflow-y: auto;
+}
+
+.InputForm {
+  margin-bottom: 20px;
+}
+
+.Tabs {
+  border: 0px solid #ccc;
+  margin-top: 20px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.tab-buttons {
+  display: flex;
+}
+
+.tab-buttons button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #f0f3f6;
+  color: black;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.tab-buttons button:hover {
+  color: rgb(89, 20, 210);
+}
+
+.tab-content {
+  margin-top: 10px;
+  padding: 0 10px; 
+}
+
+.InvoiceDetails {
+  margin-top: 10px;
+  overflow-y: auto; 
+  max-height: calc(100vh - 20vh);
+}
+
+.section {
+  margin-bottom: 10px;
+  border: 0px solid #ccc;
+}
+
+.section-header {
+  background-color: #e5e5e5;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(6, 1, 104);
+  font-size: 13px;
+}
+
+.section-header::before {
+  content: '▼'; 
+  margin-right: 10px; 
+  font-size: 14px;
+}
+
+.section-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.sections-contents {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.sections-contents label {
+  flex: 1;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.sections-contents input {
+  flex: 2;
+  padding: 5px;
+  border: 0px solid #fff;
+  border-radius: 6px;
+}
+
+.section.closed .section-content {
+  display: none;
+}
+
+.section-header:hover {
+  background-color: #e5e5e5;
+}
+
+.bottom {
+  background-color: #e5e5e5;
+  color: black;
+  padding: 9px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-row p {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 13px;
+}
+
+.bottom-row {
+  display: flex;
+  align-items: center;
+}
+
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.action-buttons select,
+.action-buttons button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+}
+
+.action-buttons select:hover,
+.action-buttons button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.action-buttons button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.action-buttons button.reject {
+  background-color: #f44336; 
+  color: white; 
+}
+
+.action-buttons button.approve {
+  background-color: #4caf50; 
+  color: white;
+}
+
+.action-buttons button:hover {
+  opacity: 0.8;
+}
+
+.action-buttons button:first-child {
+  margin-left: 0;
+}
+
+.action-buttons select {
+  padding: 6px 10px;
+}
+
+.action-buttons button {
+  padding: 6px 12px;
+}
+
+.action-buttons button:first-child {
+  margin-left: 0;
+}
+
+
+.ActionHistory {
+  padding: 0px;
+  max-height: calc(100vh - 20vh);
+  overflow-y: auto;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.history-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.history-card-1{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.history-card-11{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
+
+
+.history-card-12{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.history-card-11 p {
+  margin-left: 20px;
+}
+
+.history-card-12 p {
+  margin-right: 20px;
+  border: 0px solid #ddd;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.history-card-12 p.status-rejected {
+  background-color: #f44336; /* Red background for Rejected */
+}
+
+.history-card-2{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history-card-21{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: left; */
+}
+
+.history-card-22{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: left; */
+}
+
+.history-card-21 p {
+  margin-left: 20px;
+}
+
+.history-card-22 p {
+  margin-left: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .static-image {
+    order: 2;
+  }
+
+  .components {
+    order: 1;
+  }
+
+  .bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .action-buttons {
+    margin-top: 10px;
+  }
+
+  .action-buttons select,
+  .action-buttons button {
+    width: 100%;
+  }
+}
